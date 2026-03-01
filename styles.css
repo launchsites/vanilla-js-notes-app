@@ -1,0 +1,59 @@
+.flexbox {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.noteSidebar {
+    width: 20%;
+    padding-left: 3px;
+    padding-top: 20px;
+}
+
+.noteDisplay {
+    width: 80%;
+    padding-left: 3px;
+    font-size: x-large;
+    padding-top: 20px
+}
+
+header {
+    font-size: xx-large;
+    justify-content: center;
+    background-color: #f5bb1b;
+
+}
+
+.headerItem {
+    font-size: x-large;
+}
+
+.headerItems {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    padding: 5px 5px;
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.searchInput {
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    padding: 5px 5px;
+    color: #a9a9a9;
+}
