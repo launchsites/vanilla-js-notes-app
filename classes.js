@@ -17,9 +17,10 @@ class noteList {
         this.notes = []
         this.lastId = 0
     }
-    addNote(title, note){
+    addNote(title, textNote){
         this.lastId ++
-        this.notes = [...this.notes, new note (this.lastId, title, note)];
+        let addedNote = new note(this.lastId, title, textNote)
+        this.notes = [...this.notes, addedNote];
     }
     removeNote(noteId) {
         let newArray = []

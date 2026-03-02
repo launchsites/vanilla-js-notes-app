@@ -4,7 +4,7 @@
 
 const already = localStorage.getItem("list")
 
-if (!already || (already && !already.notes)) {
+if (!already) {
     let list = new noteList()
     localStorage.setItem("list", JSON.stringify(list))
 }
@@ -21,3 +21,4 @@ console.log(fetchFromStorage())
 function setStorage(noteList) {
     localStorage.setItem("list", JSON.stringify(noteList))
 }
+
