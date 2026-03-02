@@ -1,5 +1,8 @@
 import note from "./classes"
 
+function createNote(){
+    newNote = new note()
+}
 
 
 
