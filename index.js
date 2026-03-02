@@ -18,3 +18,6 @@ function fetchFromStorage(){
 console.log(fetchFromStorage())
 
 // setting current note list
+function setStorage(noteList) {
+    localStorage.setItem("list", JSON.stringify(noteList))
+}
