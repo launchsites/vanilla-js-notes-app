@@ -57,3 +57,37 @@ button {
     padding: 5px 5px;
     color: #a9a9a9;
 }
+
+#createNoteDisplay {
+    color: white;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    background-color: #a9a9a9;
+    justify-content: center;
+    font-size: xx-large;
+
+}
+
+body {
+    margin: 0;
+}
+
+.horizontal-align {
+    display: flex;
+    justify-content: center;
+}
+
+.detailInput {
+    font-size: large
+}
+
+.close-button {
+    background: none;
+    color: white;
+}

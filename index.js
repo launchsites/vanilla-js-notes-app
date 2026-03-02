@@ -22,3 +22,14 @@ function setStorage(noteList) {
     localStorage.setItem("list", JSON.stringify(noteList))
 }
 
+// show create window
+function showCreateWindow(){
+    let theWindow = document.getElementById("createNoteDisplay")
+    theWindow.style.visibility = "visible";
+}
+
+// close create window
+function closeCreateWindow(){
+    let theWindow = document.getElementById("createNoteDisplay")
+    theWindow.style.visibility = "hidden";
+}
