@@ -1,17 +1,20 @@
-import note from "./classes"
 
-function createNote(){
-    newNote = new note()
+
+// determine if there is already a note list in storage
+
+const already = localStorage.getItem("list")
+
+if (!already || (already && !already.notes)) {
+    let list = new noteList()
+    localStorage.setItem("list", JSON.stringify(list))
 }
 
+// fetching current note list
+function fetchFromStorage(){
+    let temp = localStorage.getItem("list")
+    return JSON.parse(temp)
+}
 
+console.log(fetchFromStorage())
 
-
-// function to add note to storage
-
-
-
-
-localStorage.getItem(...)
-
-localstorage.setItem(...)
+// setting current note list
