@@ -13,9 +13,9 @@ class note {
 }
 
 class noteList {
-    constructor(){
-        this.notes = []
-        this.lastId = 0
+    constructor(notes, lastId){
+        this.notes = notes || []
+        this.lastId = lastId || 0
     }
     addNote(title, textNote){
         this.lastId ++

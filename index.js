@@ -12,7 +12,9 @@ if (!already) {
 // fetching current note list
 function fetchFromStorage(){
     let temp = localStorage.getItem("list")
-    return JSON.parse(temp)
+    let parsed = JSON.parse(temp)
+    let newList = new noteList(parsed.notes, parsed.lastId)
+    return newList
 }
 
 console.log(fetchFromStorage())
@@ -32,4 +34,13 @@ function showCreateWindow(){
 function closeCreateWindow(){
     let theWindow = document.getElementById("createNoteDisplay")
     theWindow.style.visibility = "hidden";
+}
+
+// create a note
+function createNote(){
+    let currentList = fetchFromStorage()
+    let noteTitle = document.getElementById("createNoteTitleInput").value
+    currentList.addNote(noteTitle, "");
+    noteTitle = null
+    setStorage(currentList)
 }
