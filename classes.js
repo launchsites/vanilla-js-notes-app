@@ -4,6 +4,12 @@ class note {
         this.title = title;
         this.note = note;
     }
+    replaceTitle(title) {
+        this.title = title
+    }
+    replaceNote(text) {
+        this.note = text
+    }
 }
 
 class noteList {
