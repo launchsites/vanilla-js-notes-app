@@ -8,7 +8,7 @@
 
     <div id="createNoteDisplay" style="visibility: hidden;">
 
-        <button class="close-button">close</button>
+        <button class="close-button" onclick="closeCreateWindow()">close</button>
         <p class="horizontal-align">Create Note</p>
         <div class="horizontal-align">
             <input type="text" placeholder="title" class="detailInput">
@@ -23,7 +23,7 @@
 
     <header class="flexbox">
 
-        <div style="width: 12.5%" class="headerItem flexbox headerItems"><button>create note</button></div>
+        <div style="width: 12.5%" class="headerItem flexbox headerItems"><button onclick="showCreateWindow()">create note</button></div>
         <div style="width: 12.5%" class="headerItem flexbox headerItems"><button>delete note</button></div>
         <h1 style="width: 50%;" class="flexbox headerItems">Jamie Notes</h1>
         <div style="width: 25%" class="headerItem flexbox headerItems"><input class="searchInput" placeholder="search..."/></div>
