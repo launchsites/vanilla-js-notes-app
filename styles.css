@@ -22,7 +22,7 @@ html {
 }
 
 .divider {
-    border-top: 1px solid white;
+    border-top: 1px solid #a9a9a9;
 }
 
 .noteDisplay {
@@ -65,7 +65,8 @@ button {
     border-radius: 10px;
     font-size: large;
     padding: 5px 5px;
-    color: #a9a9a9;
+    /*color: #a9a9a9;*/
+    color: white;
 }
 
 #createNoteDisplay {
