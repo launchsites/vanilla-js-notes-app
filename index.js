@@ -68,5 +68,19 @@ function generateSidebar(){
 
 }
 
+function generateNoteDisplay(noteId){
+    let currentList = fetchFromStorage()
+
+    let thatNote = currentList.findNoteById(noteId)
+    let noteText = thatNote.note
+
+
+
+
+    document.getElementById("noteDisplay").innerHTML = noteText
+    console.log(noteText)
+
+}
+
 
 generateSidebar()
