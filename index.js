@@ -46,3 +46,9 @@ function createNote(){
     setStorage(currentList)
     document.getElementById("success-feedback").innerText = `${noteTitle} was created successfully!`
 }
+
+//generate HTML for sidebar
+
+function generateSidebar(){
+
+}
