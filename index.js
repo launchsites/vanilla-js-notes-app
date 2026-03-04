@@ -45,10 +45,28 @@ function createNote(){
     document.getElementById("createNoteTitleInput").value = ""
     setStorage(currentList)
     document.getElementById("success-feedback").innerText = `${noteTitle} was created successfully!`
+    generateSidebar()
 }
 
 //generate HTML for sidebar
-
+// <div class='sidebarItem'>awesome note</div><hr class='divider'><div class='sidebarItem'>even better note</div><hr class='divider'><div class='sidebarItem'>even more awesome</div>
 function generateSidebar(){
+    let currentList = fetchFromStorage()
+
+    let output = ""
+
+    for (let i = currentList.notes.length - 1; i >= 0; i --) {
+        output += `<div class='sidebarItem'>${currentList.notes[i].title}</div><hr class='divider'>`
+    }
+
+    const length = output.length - 20
+
+    output = output.slice(0, length)
+
+    document.getElementById("noteSidebar").innerHTML = output
+    console.log(output)
 
 }
+
+
+generateSidebar()
