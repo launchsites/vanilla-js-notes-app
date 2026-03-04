@@ -41,6 +41,6 @@ function createNote(){
     let currentList = fetchFromStorage()
     let noteTitle = document.getElementById("createNoteTitleInput").value
     currentList.addNote(noteTitle, "");
-    noteTitle = null
+    document.getElementById("createNoteTitleInput").value = ""
     setStorage(currentList)
 }
