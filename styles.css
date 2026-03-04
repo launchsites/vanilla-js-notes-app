@@ -91,3 +91,9 @@ body {
     background: none;
     color: white;
 }
+
+#success-feedback {
+    color: green;
+    font-size: medium;
+    margin-bottom: 3px;
+}

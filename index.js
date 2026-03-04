@@ -34,6 +34,7 @@ function showCreateWindow(){
 function closeCreateWindow(){
     let theWindow = document.getElementById("createNoteDisplay")
     theWindow.style.visibility = "hidden";
+    document.getElementById("success-feedback").innerText = ""
 }
 
 // create a note
@@ -43,4 +44,5 @@ function createNote(){
     currentList.addNote(noteTitle, "");
     document.getElementById("createNoteTitleInput").value = ""
     setStorage(currentList)
+    document.getElementById("success-feedback").innerText = `${noteTitle} was created successfully!`
 }
