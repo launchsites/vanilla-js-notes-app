@@ -64,7 +64,7 @@ function generateSidebar(){
     let output = ""
 
     for (let i = currentList.notes.length - 1; i >= 0; i --) {
-        output += `<button onclick="generateNoteDisplay(${currentList.notes[i].id})" class='sidebarItem'>${currentList.notes[i].title}</button><hr class='divider'>`
+        output += `<button onclick="generateNoteDisplay(${currentList.notes[i].id})" class='sidebarItem' id="sidebar-${currentList.notes[i].id}">${currentList.notes[i].title}</button><hr class='divider'>`
     }
 
     const length = output.length - 20
@@ -78,6 +78,10 @@ function generateSidebar(){
 
 function generateNoteDisplay(noteId){
 
+    if (activeNote) {
+        document.getElementById(`sidebar-${activeNote}`).style.fontWeight = "normal"
+    }
+
 
     let currentList = fetchFromStorage()
 
@@ -89,9 +93,12 @@ function generateNoteDisplay(noteId){
     else {
         let thatNote = currentList.findNoteById(noteId)
         noteText = thatNote.noteText
+        document.getElementById(`sidebar-${noteId}`).style.fontWeight = "bold"
     }
 
     document.getElementById("noteEditor").value = noteText;
+
+
 
 
     activeNote = noteId
