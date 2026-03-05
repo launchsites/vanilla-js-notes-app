@@ -97,6 +97,8 @@ function generateNoteDisplay(noteId){
     activeNote = noteId
     console.log(noteText)
 
+
+
 }
 
 
@@ -135,15 +137,11 @@ function deleteNote (confirmation) {
 
 function saveWrittenContent() {
     let writtenContent = document.getElementById("noteEditor").value
-    console.log(writtenContent)
     let currentList = fetchFromStorage();
-    console.log(currentList)
     let openNote = currentList.findNoteById(activeNote)
-    console.log(openNote)
     openNote.replaceNote(writtenContent);
     setStorage(currentList);
+    console.log("function run ")
 }
-
-
 
 generateSidebar()
