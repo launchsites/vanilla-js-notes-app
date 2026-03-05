@@ -1,14 +1,14 @@
 class note {
-    constructor(id, title, note) {
+    constructor(id, title, noteText) {
         this.id = id;
         this.title = title;
-        this.note = note;
+        this.noteText = noteText;
     }
     replaceTitle(title) {
         this.title = title
     }
     replaceNote(text) {
-        this.note = text
+        this.noteText = text
     }
 }
 

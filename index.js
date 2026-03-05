@@ -13,7 +13,15 @@ if (!already) {
 function fetchFromStorage(){
     let temp = localStorage.getItem("list")
     let parsed = JSON.parse(temp)
-    let newList = new noteList(parsed.notes, parsed.lastId)
+
+    let parsedNotes = []
+
+    for (let i = 0; i < parsed.notes.length; i++)
+        parsedNotes = [...parsedNotes, new note(parsed.notes[i].id, parsed.notes[i].title, parsed.notes[i].noteText)]
+
+    let newList = new noteList(parsedNotes, parsed.lastId)
+    // issue is it's going in as not note
+    // parsed.notes instead needs to be an array of note objects
     return newList
 }
 
@@ -69,6 +77,8 @@ function generateSidebar(){
 }
 
 function generateNoteDisplay(noteId){
+
+
     let currentList = fetchFromStorage()
 
     let noteText
@@ -78,15 +88,12 @@ function generateNoteDisplay(noteId){
     }
     else {
         let thatNote = currentList.findNoteById(noteId)
-        noteText = thatNote.note
+        noteText = thatNote.noteText
     }
 
+    document.getElementById("noteEditor").value = noteText;
 
 
-
-
-
-    document.getElementById("noteDisplay").innerHTML = noteText
     activeNote = noteId
     console.log(noteText)
 
@@ -123,6 +130,20 @@ function deleteNote (confirmation) {
     //do error feedback for if no active note
 
 }
+
+// save written content
+
+function saveWrittenContent() {
+    let writtenContent = document.getElementById("noteEditor").value
+    console.log(writtenContent)
+    let currentList = fetchFromStorage();
+    console.log(currentList)
+    let openNote = currentList.findNoteById(activeNote)
+    console.log(openNote)
+    openNote.replaceNote(writtenContent);
+    setStorage(currentList);
+}
+
 
 
 generateSidebar()
