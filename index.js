@@ -56,7 +56,7 @@ function generateSidebar(){
     let output = ""
 
     for (let i = currentList.notes.length - 1; i >= 0; i --) {
-        output += `<div class='sidebarItem'>${currentList.notes[i].title}</div><hr class='divider'>`
+        output += `<button onclick="generateNoteDisplay(${currentList.notes[i].id})" class='sidebarItem'>${currentList.notes[i].title}</button><hr class='divider'>`
     }
 
     const length = output.length - 20
