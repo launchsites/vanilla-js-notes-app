@@ -145,7 +145,7 @@ textarea {
 
 textarea::selection {
     background: #f5bb1b;
-    color: #1e1e1e;
+    color: white;
     outline: none;
     scrollbar-color: #f5bb1b #f5bb1b;
 }
