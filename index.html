@@ -19,13 +19,21 @@
 
     </div>
 
+    <div id="deleteNoteConfirmation" style="visibility: hidden;">
+        <div id="deleteConfirmationText"></div>
+        <div class="horizontal-align">
+            <button onclick="deleteNote('n')">No!</button>
+            <button onclick="deleteNote('y')">Yes</button>
+        </div>
+    </div>
+
 
     <!--header-->
 
     <header class="flexbox">
 
         <div style="width: 12.5%" class="headerItem flexbox headerItems"><button onclick="showCreateWindow()">create note</button></div>
-        <div style="width: 12.5%" class="headerItem flexbox headerItems"><button>delete note</button></div>
+        <div style="width: 12.5%" class="headerItem flexbox headerItems"><button onclick="deleteNote()">delete note</button></div>
         <h1 style="width: 50%;" class="flexbox headerItems">Jamie Notes</h1>
         <div style="width: 25%" class="headerItem flexbox headerItems"><input class="searchInput" placeholder="search..."/></div>
 
@@ -41,7 +49,7 @@
 
 <!--open note display-->
         <div class="noteDisplay" id="noteDisplay">
-            This is an example note
+<!--            This is an example note-->
         </div>
 
 

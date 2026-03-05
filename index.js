@@ -71,8 +71,17 @@ function generateSidebar(){
 function generateNoteDisplay(noteId){
     let currentList = fetchFromStorage()
 
-    let thatNote = currentList.findNoteById(noteId)
-    let noteText = thatNote.note
+    let noteText
+
+    if (!noteId) {
+        noteText = "Create a new note!"
+    }
+    else {
+        let thatNote = currentList.findNoteById(noteId)
+        noteText = thatNote.note
+    }
+
+
 
 
 
@@ -80,6 +89,32 @@ function generateNoteDisplay(noteId){
     document.getElementById("noteDisplay").innerHTML = noteText
     activeNote = noteId
     console.log(noteText)
+
+}
+
+
+function deleteNote (confirmation) {
+
+    let currentList = fetchFromStorage()
+
+    if (confirmation === "y") {
+        currentList.removeNote(activeNote)
+        setStorage(currentList)
+        generateSidebar()
+        generateNoteDisplay()
+        document.getElementById("deleteNoteConfirmation").style.visibility = "hidden";
+    }
+
+    else if (confirmation === "n") {
+        document.getElementById("deleteNoteConfirmation").style.visibility = "hidden";
+    }
+
+    else {
+        document.getElementById("deleteNoteConfirmation").style.visibility = "visible"
+        let noteTitle = currentList.findNoteById(activeNote).title
+        document.getElementById("deleteConfirmationText").innerText = `Are you sure that you want to delete ${noteTitle}?`
+    }
+
 
 }
 

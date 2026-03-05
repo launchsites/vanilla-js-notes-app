@@ -108,3 +108,19 @@ body {
     font-size: medium;
     margin-bottom: 3px;
 }
+
+#deleteNoteConfirmation {
+    color: white;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    background-color: #f5bb1b;
+    justify-content: center;
+    font-size: xx-large;
+
+}
