@@ -30,7 +30,8 @@ html {
     padding-left: 5%;
     font-size: x-large;
     padding-top: 20px;
-    height: 90vh;
+    height: 80vh;
+    scrollbar-color: #f5bb1b #f5bb1b;
 }
 
 header {
@@ -146,4 +147,5 @@ textarea::selection {
     background: #1e1e1e;
     color: #1e1e1e;
     outline: none;
+    scrollbar-color: #f5bb1b #f5bb1b;
 }
