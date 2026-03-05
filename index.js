@@ -1,4 +1,4 @@
-
+var activeNote
 
 // determine if there is already a note list in storage
 
@@ -78,6 +78,7 @@ function generateNoteDisplay(noteId){
 
 
     document.getElementById("noteDisplay").innerHTML = noteText
+    activeNote = noteId
     console.log(noteText)
 
 }
