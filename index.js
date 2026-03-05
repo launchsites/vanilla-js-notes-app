@@ -95,26 +95,32 @@ function generateNoteDisplay(noteId){
 
 function deleteNote (confirmation) {
 
-    let currentList = fetchFromStorage()
+    if (activeNote) {
+        let currentList = fetchFromStorage()
 
-    if (confirmation === "y") {
-        currentList.removeNote(activeNote)
-        setStorage(currentList)
-        generateSidebar()
-        generateNoteDisplay()
-        document.getElementById("deleteNoteConfirmation").style.visibility = "hidden";
+        if (confirmation === "y") {
+            currentList.removeNote(activeNote)
+            setStorage(currentList)
+            generateSidebar()
+            generateNoteDisplay()
+            document.getElementById("deleteNoteConfirmation").style.visibility = "hidden";
+            activeNote = null
+        }
+
+        else if (confirmation === "n") {
+            document.getElementById("deleteNoteConfirmation").style.visibility = "hidden";
+        }
+
+        else {
+            document.getElementById("deleteNoteConfirmation").style.visibility = "visible"
+            let noteTitle = currentList.findNoteById(activeNote).title
+            document.getElementById("deleteConfirmationText").innerText = `Are you sure that you want to delete ${noteTitle}?`
+        }
     }
 
-    else if (confirmation === "n") {
-        document.getElementById("deleteNoteConfirmation").style.visibility = "hidden";
-    }
 
-    else {
-        document.getElementById("deleteNoteConfirmation").style.visibility = "visible"
-        let noteTitle = currentList.findNoteById(activeNote).title
-        document.getElementById("deleteConfirmationText").innerText = `Are you sure that you want to delete ${noteTitle}?`
-    }
 
+    //do error feedback for if no active note
 
 }
 
